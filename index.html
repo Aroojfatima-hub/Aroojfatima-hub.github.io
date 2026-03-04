@@ -1,213 +1,458 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Arooj Fatima | Data Scientist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arooj Fatima | Data Scientist</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            background: #f4f7fb;
-            color: #333;
-        }
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        /* HERO SECTION */
-        header {
-            background: linear-gradient(135deg, #1f2d3d, #0077b6);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+    color:#e2e8f0;
+    overflow-x:hidden;
+}
 
-        header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
+/* Subtle AI background effect */
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background: radial-gradient(circle,#38bdf8 0%,transparent 70%);
+    top:-200px;
+    right:-200px;
+    opacity:0.1;
+    z-index:-1;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: white;
-            color: #0077b6;
-            border-radius: 25px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    background:rgba(15,23,42,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
 
-        .btn:hover {
-            background: #e6f2ff;
-            transform: scale(1.05);
-        }
+nav h2{
+    color:#38bdf8;
+}
 
-        section {
-            padding: 60px 10%;
-        }
+nav a{
+    color:#e2e8f0;
+    margin-left:25px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
 
-        h2 {
-            margin-bottom: 30px;
-            color: #1f2d3d;
-            border-left: 5px solid #0077b6;
-            padding-left: 10px;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        /* CARD DESIGN */
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+/* Hero */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+header h1{
+    font-size:48px;
+    font-weight:700;
+}
 
-        /* SKILLS BADGES */
-        .skills span {
-            display: inline-block;
-            background: #0077b6;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 14px;
-        }
+#typing{
+    color:#38bdf8;
+    font-size:20px;
+    margin:15px 0;
+}
 
-        /* PROJECT GRID */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:#0f172a;
+    border-radius:30px;
+    font-weight:600;
+    text-decoration:none;
+    margin:10px;
+    transition:0.3s;
+}
 
-        a {
-            color: #0077b6;
-            text-decoration: none;
-            font-weight: 500;
-        }
+.btn:hover{
+    background:#0ea5e9;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* Sections */
+section{
+    padding:100px 10%;
+}
 
-        footer {
-            background: #1f2d3d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+h2{
+    color:#38bdf8;
+    margin-bottom:40px;
+}
 
-        @media(max-width: 768px){
-            section {
-                padding: 40px 20px;
-            }
+/* Glass Card */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    transition:0.3s;
+}
 
-            header h1 {
-                font-size: 32px;
-            }
-        }
+.card:hover{
+    transform:translateY(-5px);
+}
 
-    </style>
+/* Stats */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    flex-wrap:wrap;
+}
+
+.stats h3{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.project img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0f172a;
+    border-top:1px solid #1e293b;
+}
+
+@media(max-width:768px){
+    header h1{font-size:32px;}
+}
+</style>
 </head>
 
 <body>
 
+<nav>
+    <h2>AF</h2>
+    <div>
+        <a href="#projects">Projects</a>
+        <a href="#stats">Stats</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 <header>
     <h1>Arooj Fatima</h1>
-    <p>Aspiring Data Scientist | BSCS Student | Machine Learning Enthusiast</p>
-    <a href="https://github.com/Aroojfatima-hub" class="btn" target="_blank">View GitHub</a>
+    <div id="typing"></div>
+    <p>Aspiring Data Scientist | BSCS UMT (2024–2027)</p>
+    <a href="Arooj_Fatima_Resume.pdf" class="btn" download>Download Resume</a>
+    <a href="https://github.com/Aroojfatima-hub" target="_blank" class="btn">GitHub</a>
 </header>
-
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-        I am a passionate BSCS student at UMT Lahore (2024–2027) focused on 
-        Data Science and Machine Learning. I enjoy building predictive models,
-        performing data analysis, and solving real-world problems using analytical thinking.
-        </p>
-    </div>
+<section id="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am <strong>Arooj Fatima</strong>, a passionate and dedicated aspiring Data Scientist currently pursuing BSCS at UMT (2024–2027).  
+      I thrive on learning and exploring new technologies, tools, and methodologies in Data Science, Machine Learning, and Artificial Intelligence.  
+      Every project I work on is an opportunity to grow, challenge myself, and apply my skills to solve real-world problems.  
+      I am committed to continuous learning, constantly improving my knowledge, and embracing innovative approaches to turn data into actionable insights.  
+      My goal is to contribute meaningfully to data-driven initiatives while expanding my expertise in this ever-evolving field.
+    </p>
+  </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
-    <div class="projects">
-
-        <div class="card">
-            <h3>Spam Email Detection</h3>
-            <p>Machine learning classification model using text preprocessing and feature engineering.</p>
-            <a href="https://github.com/AROOJFATIMA-HUB/SPAM-EMAIL-DETECTION" target="_blank">View Project →</a>
-        </div>
-
-        <div class="card">
-            <h3>House Price Prediction</h3>
-            <p>Regression model with EDA, preprocessing and model evaluation techniques.</p>
-            <a href="https://github.com/AROOJFATIMA-HUB/HOUSE-PRICE-PREDICTION" target="_blank">View Project →</a>
-        </div>
-
+<section id="stats" data-aos="fade-up">
+<h2>Professional Highlights</h2>
+<div class="stats">
+    <div>
+        <h3 class="counter" data-target="2">0</h3>
+        <p>Projects</p>
     </div>
+    <div>
+        <h3 class="counter" data-target="12">0</h3>
+        <p>Technical Skills</p>
+    </div>
+    <div>
+        <h3 class="counter" data-target="2">0</h3>
+        <p>Certifications</p>
+    </div>
+</div>
 </section>
 
-<section>
-    <h2>Technical Skills</h2>
-    <div class="card skills">
-        <span>Python</span>
-        <span>C++</span>
-        <span>SQL</span>
-        <span>NumPy</span>
-        <span>Pandas</span>
-        <span>Scikit-Learn</span>
-        <span>Matplotlib</span>
-        <span>Machine Learning</span>
-        <span>Data Analysis</span>
+<section id="projects">
+<h2 data-aos="fade-up">Selected Projects</h2>
+<div class="grid">
+
+<div class="card project" data-aos="fade-right">
+<img src="https://via.placeholder.com/400x200.png?text=Spam+Email+Detection">
+<h3>Spam Email Detection</h3>
+<p>ML classification model using text preprocessing & feature extraction.</p>
+<a href="https://github.com/AROOJFATIMA-HUB/SPAM-EMAIL-DETECTION" target="_blank" class="btn">View Project</a>
+</div>
+
+<div class="card project" data-aos="fade-left">
+<img src="https://via.placeholder.com/400x200.png?text=House+Price+Prediction">
+<h3>House Price Prediction</h3>
+<p>Regression-based predictive model with EDA and evaluation.</p>
+<a href="https://github.com/AROOJFATIMA-HUB/HOUSE-PRICE-PREDICTION" target="_blank" class="btn">View Project</a>
+</div>
+
+</div>
+</section>
+<section id="skills" data-aos="fade-up">
+<h2>Technical Expertise</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Programming</h3>
+<p>Python (Intermediate/Advanced), C++, C, SQL</p>
+</div>
+
+<div class="card">
+<h3>Libraries & Tools</h3>
+<p>NumPy, Pandas, Scikit-learn, Matplotlib</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>Regression, Classification, Feature Engineering, Model Evaluation</p>
+</div>
+
+<div class="card">
+<h3>Data Skills</h3>
+<p>Data Preprocessing, Exploratory Data Analysis (EDA), Statistics & Probability</p>
+</div>
+
+</div>
+</section>
+<section id="coursework" data-aos="fade-up">
+  <h2>Relevant Coursework</h2>
+  <div class="grid">
+
+    <!-- Core Academic Courses -->
+    <div class="card" data-aos="fade-right">
+      <h3>Data Structures & Algorithms</h3>
+      <p>Fundamentals of algorithms, problem-solving, and data structures in Python and C++.</p>
     </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Database Management Systems</h3>
+      <p>Relational databases, SQL queries, data modeling, and normalization.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Statistical Methods for Data Science</h3>
+      <p>Probability, descriptive & inferential statistics, hypothesis testing, and data analysis techniques.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Artificial Intelligence</h3>
+      <p>Introduction to AI concepts, search algorithms, and intelligent agent design.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Python Programming for Data Analysis</h3>
+      <p>Python basics, data manipulation with Pandas, and visualization with Matplotlib.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Machine Learning</h3>
+      <p>Supervised & unsupervised learning, regression, classification, and model evaluation techniques.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Deep Learning</h3>
+      <p>Neural networks, CNNs, RNNs, and fundamentals of deep learning models.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Data Visualization</h3>
+      <p>Visualization of data using Matplotlib, Seaborn, and exploratory data analysis concepts.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>SQL & Databases for Data Science</h3>
+      <p>Querying, data storage, relational databases, and database management for analytics.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Git & GitHub for Data Science</h3>
+      <p>Version control, collaboration, and workflow management using Git and GitHub.</p>
+    </div>
+
+  </div>
+</section>
+<section id="certifications" data-aos="fade-up">
+<h2>Certifications</h2>
+
+<div class="card">
+<h3>Critical Thinking in the AI Era — HP Life</h3>
+<p>Focused on analytical reasoning, responsible AI usage, and structured problem solving in AI-driven environments.</p>
+<a href="https://www.life-global.org/certificate/0f872919-d860-4b13-98cb-7895bec4231b" target="_blank" class="btn">View Certificate</a>
+</div>
+
+<div class="card">
+<h3>Agile Project Management — HP Life</h3>
+<p>Learned Agile methodology, Scrum fundamentals, team collaboration, and iterative development processes.</p>
+<a href="https://www.life-global.org/certificate/3721294a-4f4b-4018-9767-eca417d3ed3a" target="_blank" class="btn">View Certificate</a>
+</div>
+
+</section>
+<section id="soft-skills" data-aos="fade-up">
+  <h2>Soft Skills</h2>
+  <div class="grid">
+
+    <div class="card" data-aos="fade-right">
+      <h3>Communication</h3>
+      <p>Clear and effective verbal and written communication, presenting ideas confidently.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Teamwork</h3>
+      <p>Collaborates efficiently with others, adapts to diverse teams, and supports group goals.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Problem Solving</h3>
+      <p>Analyzes challenges, identifies solutions, and applies logical reasoning under pressure.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Quick Learner</h3>
+      <p>Adaptable to new technologies and concepts, able to learn and implement quickly.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Time Management</h3>
+      <p>Organizes tasks effectively, meets deadlines, and balances multiple projects efficiently.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Critical Thinking</h3>
+      <p>Evaluates information objectively, makes informed decisions, and anticipates potential issues.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Adaptability</h3>
+      <p>Adjusts quickly to new situations, environments, and challenges with flexibility.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Leadership</h3>
+      <p>Guides teams effectively, motivates peers, and takes responsibility for achieving goals.</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h3>Creativity</h3>
+      <p>Generates innovative ideas, solves problems imaginatively, and thinks outside the box.</p>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h3>Collaboration</h3>
+      <p>Works harmoniously with others, values feedback, and contributes to shared objectives.</p>
+    </div>
+
+  </div>
 </section>
 
-<section>
-    <h2>Certifications</h2>
-
-    <div class="card">
-        <h3>Critical Thinking in the AI Era</h3>
-        <p>HP Life – Analytical reasoning & responsible AI usage.</p>
-        <a href="https://www.life-global.org/certificate/0f872919-d860-4b13-98cb-7895bec4231b" target="_blank">View Certificate →</a>
-    </div>
-
-    <div class="card">
-        <h3>Agile Project Management</h3>
-        <p>HP Life – Agile methodologies, Scrum & team collaboration.</p>
-        <a href="https://www.life-global.org/certificate/3721294a-4f4b-4018-9767-eca417d3ed3a" target="_blank">View Certificate →</a>
-    </div>
-
+<section data-aos="fade-up">
+<h2>GitHub Activity</h2>
+<img src="https://ghchart.rshah.org/38bdf8/Aroojfatima-hub" width="100%">
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <div class="card">
-        <p><strong>Email:</strong> 321uroojfatima@gmail.com</p>
-        <p><strong>GitHub:</strong> github.com/Aroojfatima-hub</p>
-        <p><strong>Location:</strong> Lahore, Pakistan</p>
-    </div>
+<section id="contact" data-aos="fade-up">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: 321uroojfatima@gmail.com</p>
+<p>Phone: 03274062998</p>
+<p>Location: Lahore, Pakistan</p>
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Arooj Fatima | Data Science Portfolio</p>
+© 2026 Arooj Fatima | Data Science Portfolio
 </footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:1000});
+
+// Typing effect
+const texts = ["Data Science Enthusiast","Machine Learning Learner","Future AI Engineer"];
+let count=0,index=0,currentText="",letter="";
+(function type(){
+if(count===texts.length) count=0;
+currentText=texts[count];
+letter=currentText.slice(0,++index);
+document.getElementById("typing").textContent=letter;
+if(letter.length===currentText.length){
+count++;
+index=0;
+setTimeout(type,1000);
+}else{
+setTimeout(type,80);
+}
+})();
+
+// Counter animation
+const counters=document.querySelectorAll('.counter');
+counters.forEach(counter=>{
+counter.innerText='0';
+const update=()=>{
+const target=+counter.getAttribute('data-target');
+const c=+counter.innerText;
+const increment=target/100;
+if(c<target){
+counter.innerText=`${Math.ceil(c+increment)}`;
+setTimeout(update,20);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+</script>
 
 </body>
 </html>
