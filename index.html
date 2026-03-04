@@ -1,132 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Arooj Fatima | Data Science Portfolio</title>
+    <title>Arooj Fatima | Data Scientist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        /* HERO SECTION */
         header {
-            background: #1f2d3d;
+            background: linear-gradient(135deg, #1f2d3d, #0077b6);
             color: white;
             text-align: center;
-            padding: 50px;
+            padding: 80px 20px;
         }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: #0077b6;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e6f2ff;
+            transform: scale(1.05);
+        }
+
         section {
-            padding: 40px;
+            padding: 60px 10%;
         }
+
         h2 {
+            margin-bottom: 30px;
             color: #1f2d3d;
+            border-left: 5px solid #0077b6;
+            padding-left: 10px;
         }
+
+        /* CARD DESIGN */
         .card {
             background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* SKILLS BADGES */
+        .skills span {
+            display: inline-block;
+            background: #0077b6;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        /* PROJECT GRID */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
         a {
             color: #0077b6;
             text-decoration: none;
+            font-weight: 500;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         footer {
             background: #1f2d3d;
             color: white;
             text-align: center;
             padding: 20px;
+            margin-top: 40px;
         }
+
+        @media(max-width: 768px){
+            section {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
 <header>
     <h1>Arooj Fatima</h1>
-    <p>Aspiring Data Scientist | BSCS Student (UMT Lahore)</p>
+    <p>Aspiring Data Scientist | BSCS Student | Machine Learning Enthusiast</p>
+    <a href="https://github.com/Aroojfatima-hub" class="btn" target="_blank">View GitHub</a>
 </header>
 
 <section>
     <h2>About Me</h2>
-    <p>I am a BSCS student at University of Management and Technology (UMT), Lahore (2024-2027). 
-    I am passionate about Data Science and Machine Learning. I enjoy working with data, 
-    building predictive models, and solving real-world problems using analytical thinking.</p>
-</section>
-
-<section>
-    <h2>Education</h2>
-
     <div class="card">
-        <h3>Bachelor of Science in Computer Science (BSCS)</h3>
-        <p>University of Management and Technology (UMT), Lahore</p>
-        <p>2024 – 2027 (Pursuing)</p>
-    </div>
-
-    <div class="card">
-        <h3>Intermediate in Computer Science (ICS)</h3>
-        <p>Punjab College</p>
-        <p>2021 – 2023</p>
-    </div>
-
-</section>
-
-<section>
-    <h2>Relevant Coursework</h2>
-    <div class="card">
-        <h3>Core Courses</h3>
-        <ul>
-            <li>Artificial Intelligence (Pursuing)</li>
-            <li>SQL</li>
-            <li>Statistics & Probability</li>
-        </ul>
-        <h3>Electives</h3>
-        <ul>
-            <li>Machine Learning</li>
-            <li>Data Mining</li>
-            <li>Deep Learning (Pursuing)</li>
-            <li>Mobile Application Development (Pursuing)</li>
-        </ul>
+        <p>
+        I am a passionate BSCS student at UMT Lahore (2024–2027) focused on 
+        Data Science and Machine Learning. I enjoy building predictive models,
+        performing data analysis, and solving real-world problems using analytical thinking.
+        </p>
     </div>
 </section>
 
 <section>
     <h2>Projects</h2>
+    <div class="projects">
 
-    <div class="card">
-        <h3>Spam Email Detection</h3>
-        <p>Built a machine learning classification model to detect spam emails using 
-        text preprocessing and feature extraction techniques.</p>
-        <p><a href="https://github.com/AROOJFATIMA-HUB/SPAM-EMAIL-DETECTION" target="_blank">View Project on GitHub</a></p>
+        <div class="card">
+            <h3>Spam Email Detection</h3>
+            <p>Machine learning classification model using text preprocessing and feature engineering.</p>
+            <a href="https://github.com/AROOJFATIMA-HUB/SPAM-EMAIL-DETECTION" target="_blank">View Project →</a>
+        </div>
+
+        <div class="card">
+            <h3>House Price Prediction</h3>
+            <p>Regression model with EDA, preprocessing and model evaluation techniques.</p>
+            <a href="https://github.com/AROOJFATIMA-HUB/HOUSE-PRICE-PREDICTION" target="_blank">View Project →</a>
+        </div>
+
     </div>
-
-    <div class="card">
-        <h3>House Price Prediction</h3>
-        <p>Developed a regression model to predict house prices. 
-        Applied data preprocessing, EDA, and model evaluation techniques.</p>
-        <p><a href="https://github.com/AROOJFATIMA-HUB/HOUSE-PRICE-PREDICTION" target="_blank">View Project on GitHub</a></p>
-    </div>
-
 </section>
 
 <section>
     <h2>Technical Skills</h2>
-    <p><strong>Programming:</strong> Python, C++, C</p>
-    <p><strong>Databases:</strong> SQL (Basics)</p>
-    <p><strong>Machine Learning:</strong> Supervised Learning, Regression, Classification</p>
-    <p><strong>Libraries:</strong> NumPy, Pandas, Scikit-learn, Matplotlib</p>
-    <p><strong>Data Skills:</strong> Data Preprocessing, Feature Engineering, EDA</p>
-</section>
-
-<section>
-    <h2>Core Competencies</h2>
-    <p>✔ Data Transformation & Structuring</p>
-    <p>✔ Analytical Thinking</p>
-    <p>✔ Problem Solving</p>
-    <p>✔ Quick Learner</p>
+    <div class="card skills">
+        <span>Python</span>
+        <span>C++</span>
+        <span>SQL</span>
+        <span>NumPy</span>
+        <span>Pandas</span>
+        <span>Scikit-Learn</span>
+        <span>Matplotlib</span>
+        <span>Machine Learning</span>
+        <span>Data Analysis</span>
+    </div>
 </section>
 
 <section>
@@ -134,33 +184,25 @@
 
     <div class="card">
         <h3>Critical Thinking in the AI Era</h3>
-        <p>Issued by HP Life</p>
-        <p>Focused on analytical reasoning, responsible AI usage, and structured problem-solving in modern AI environments.</p>
-        <p>
-            <a href="https://www.life-global.org/certificate/0f872919-d860-4b13-98cb-7895bec4231b" target="_blank">
-                View Certificate
-            </a>
-        </p>
+        <p>HP Life – Analytical reasoning & responsible AI usage.</p>
+        <a href="https://www.life-global.org/certificate/0f872919-d860-4b13-98cb-7895bec4231b" target="_blank">View Certificate →</a>
     </div>
 
     <div class="card">
         <h3>Agile Project Management</h3>
-        <p>Issued by HP Life</p>
-        <p>Learned Agile methodologies, Scrum basics, project planning, team collaboration, and iterative development processes.</p>
-        <p>
-            <a href="https://www.life-global.org/certificate/3721294a-4f4b-4018-9767-eca417d3ed3a" target="_blank">
-                View Certificate
-            </a>
-        </p>
+        <p>HP Life – Agile methodologies, Scrum & team collaboration.</p>
+        <a href="https://www.life-global.org/certificate/3721294a-4f4b-4018-9767-eca417d3ed3a" target="_blank">View Certificate →</a>
     </div>
 
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p>Email: 321uroojfatima@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Aroojfatima-hub" target="_blank">github.com/Aroojfatima-hub</a></p>
-    <p>Location: Lahore, Pakistan</p>
+    <div class="card">
+        <p><strong>Email:</strong> 321uroojfatima@gmail.com</p>
+        <p><strong>GitHub:</strong> github.com/Aroojfatima-hub</p>
+        <p><strong>Location:</strong> Lahore, Pakistan</p>
+    </div>
 </section>
 
 <footer>
